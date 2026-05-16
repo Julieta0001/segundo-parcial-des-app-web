@@ -13,7 +13,7 @@
 
 ---
 
-## 📝 Descripción General del Negocio
+##  Descripción General del Negocio
 **La Villa** es una aplicación web modularizada orientada a la gestión interna y visualización de inventario para un negocio de comercio/servicios. El objetivo principal de la aplicación es proveer un entorno administrativo seguro y responsivo que permita controlar el flujo de productos, centralizar la navegación mediante un ecosistema de componentes reutilizables y simular la persistencia de datos mediante almacenamiento local.
 
 ---
