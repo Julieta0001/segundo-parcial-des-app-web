@@ -22,7 +22,10 @@
             
             <div class="mt-3">
               <h5 class="text-success fw-bold">{{ producto.precio }}</h5>
-              <button class="btn btn-dark w-100 mt-2 shadow-sm">
+              <button
+                class="btn btn-dark w-100 mt-2 shadow-sm"
+                @click="irAPedido(producto)"
+              >
                 Comprar ahora
               </button>
             </div>
@@ -43,6 +46,21 @@ export default {
     return {
       listaProductos: productosData
     }
+  },
+  methods: {
+    irAPedido(producto) {
+      const ventaActual = {
+        producto: producto.nombre,
+        precio: producto.precio,
+        fecha: new Date().toLocaleString()
+      }
+      const ventasGuardadas = JSON.parse(localStorage.getItem('ventas') || '[]')
+      localStorage.setItem('ventas', JSON.stringify([...ventasGuardadas, ventaActual]))
+      this.$router.push({
+        path: '/pedido',
+        query: { producto: producto.nombre }
+      })
+    }
   }
 }
 </script>
@@ -54,7 +72,6 @@ export default {
   border-radius: 15px;
   overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
 }
-
 
 
 .card-img-top {
