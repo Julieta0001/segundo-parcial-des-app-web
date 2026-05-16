@@ -52,6 +52,21 @@ export default {
     return {
       listaProductos: productosData
     }
+  },
+  methods: {
+    irAPedido(producto) {
+      const ventaActual = {
+        producto: producto.nombre,
+        precio: producto.precio,
+        fecha: new Date().toLocaleString()
+      }
+      const ventasGuardadas = JSON.parse(localStorage.getItem('ventas') || '[]')
+      localStorage.setItem('ventas', JSON.stringify([...ventasGuardadas, ventaActual]))
+      this.$router.push({
+        path: '/pedido',
+        query: { producto: producto.nombre }
+      })
+    }
   }
 }
 </script>

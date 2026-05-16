@@ -130,4 +130,20 @@ export default {
 .contact-item:hover {
   color: #198754 !important; /* Cambia a verde al pasar el cursor */
 }
+
+.contact-section {
+  margin-top: 2rem;
+}
+
+.contact-container h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-control {
+  border-radius: 0.5rem;
+}
+
+.contact-form .btn {
+  min-width: 160px;
+}
 </style>
