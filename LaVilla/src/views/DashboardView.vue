@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-wrapper d-flex flex-column min-vh-100">
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-3 sticky-top">
       <div class="container-fluid">
         <span class="navbar-brand fw-bold text-success text-uppercase tracking-wider">
           🍃 La Villa Panel
@@ -17,6 +17,21 @@
             <li class="nav-item">
               <router-link to="/dashboard/productos" class="nav-link text-white-50 px-2" active-class="active-link">
                 🍗 Productos
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/dashboard/pedidos" class="nav-link text-white-50 px-2" active-class="active-link">
+                📦 Pedidos
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/dashboard/inventario" class="nav-link text-white-50 px-2" active-class="active-link">
+                📊 Inventario
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/dashboard/ventas" class="nav-link text-white-50 px-2" active-class="active-link">
+                💼 Ventas
               </router-link>
             </li>
           </ul>

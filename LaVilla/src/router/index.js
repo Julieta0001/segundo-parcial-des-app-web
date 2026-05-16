@@ -14,8 +14,20 @@ const routes = [
     component: DashboardView,
     children: [
       {
-        path: 'productos', // Cuando entres a /dashboard/productos
+        path: 'productos', // Ruta: /dashboard/productos
         component: ProductoView
+      },
+      {
+        path: 'pedidos', // Ruta: /dashboard/pedidos
+        component: PedidoView
+      },
+      {
+        path: 'inventario', // Ruta: /dashboard/inventario
+        component: InventarioView
+      },
+      {
+        path: 'ventas', // Ruta: /dashboard/ventas
+        component: VentasView
       }
     ]
   }

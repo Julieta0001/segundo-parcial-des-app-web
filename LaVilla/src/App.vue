@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <NavbarComponent />
+    <NavbarComponent v-if="$route.path !== '/' && $route.path !== '/login'" />
 
     <div class="app-layout">
-      <SidebarComponent v-if="$route.path !== '/'" />
+      <SidebarComponent v-if="$route.path !== '/' && $route.path !== '/login'" />
 
       <main class="main-content">
         <router-view />
       </main>
     </div>
 
-    <FooterComponent />
+    <FooterComponent v-if="$route.path !== '/' && $route.path !== '/login'" />
   </div>
 </template>
 
 <script>
 import NavbarComponent from '@/components/NavbarComponent.vue'
-import SidebarComponent from '@/components/SidebarComponent.vue'
+
 import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
     NavbarComponent,
-    SidebarComponent,
+
     FooterComponent
   }
 }
