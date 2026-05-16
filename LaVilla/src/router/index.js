@@ -4,9 +4,18 @@ import DashboardView from '@/views/DashboardView.vue'
 import ProductoView from '@/views/ProductoView.vue'
 
 const routes = [
-  { path: '/', component: LoginView },
-  { path: '/dashboard', component: DashboardView },
-  { path: '/productos', component: ProductoView }
+  { path: '/', redirect: '/login' },
+  { path: '/login', component: LoginView },
+  { 
+    path: '/dashboard', 
+    component: DashboardView,
+    children: [
+      {
+        path: 'productos', // Cuando entres a /dashboard/productos
+        component: ProductoView
+      }
+    ]
+  }
 ]
 
 export default createRouter({
